@@ -8,6 +8,7 @@ import { TabsPage } from "../pages/tabs/tabs";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { HttpClientModule } from '@angular/common/http';
 
 //Providers
 import { GooglePlacesAutocompleteComponentModule } from "ionic2-google-places-autocomplete";
@@ -16,6 +17,7 @@ import { GooglePlacesAutocompleteComponentModule } from "ionic2-google-places-au
   declarations: [MyApp, TabsPage],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     GooglePlacesAutocompleteComponentModule
   ],

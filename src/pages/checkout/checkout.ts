@@ -13,6 +13,7 @@ import {
 })
 export class CheckoutPage {
   address;
+  items;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,5 +39,10 @@ export class CheckoutPage {
       console.log("");
     });
     modal.present();
+  }
+
+  ngOnInit(){
+    let cart = JSON.parse(localStorage['cart']);
+    this.items = cart.items;
   }
 }

@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ChatBot</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="primary">
+        <ion-icon name="md-time"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  
+    <div class="messaging">
+          <div class="inbox_msg">
+    
+            <div class="mesgs">
+              <div class="msg_history" *ngFor="let msg of msgs">
+                <div class="incoming_msg" *ngIf="msg.type=='in'">
+                  <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>{{msg.text}}</p>
+                      
+                  </div>
+                </div>
+                </div>
+                <div class="outgoing_msg" *ngIf="msg.type=='out'">
+                  <div class="sent_msg">
+                    <p>{{msg.text}}</p>
+                </div>
+                
+                
+                
+              
+    
+            </div>
+          </div>
+        
+      </div>
+      </div>
+      </div>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <div class="bottom-text">
+      <input type="text" [(ngModel)]="chatMsg" />
+      <div class="send-btn" (tap)="sendChat()"><ion-icon name="send"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

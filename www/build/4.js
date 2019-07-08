@@ -1,14 +1,15 @@
 webpackJsonp([4],{
 
-/***/ 288:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyNumberPageModule", function() { return VerifyNumberPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FiltersPageModule", function() { return FiltersPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__verify_number__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ChatBot__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +19,147 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var VerifyNumberPageModule = /** @class */ (function () {
-    function VerifyNumberPageModule() {
+
+var FiltersPageModule = /** @class */ (function () {
+    function FiltersPageModule() {
     }
-    VerifyNumberPageModule = __decorate([
+    FiltersPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__verify_number__["a" /* VerifyNumberPage */],
+                __WEBPACK_IMPORTED_MODULE_2__ChatBot__["a" /* ChatBot */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__verify_number__["a" /* VerifyNumberPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__["a" /* StarRatingModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ChatBot__["a" /* ChatBot */]),
             ],
         })
-    ], VerifyNumberPageModule);
-    return VerifyNumberPageModule;
+    ], FiltersPageModule);
+    return FiltersPageModule;
 }());
 
-//# sourceMappingURL=verify-number.module.js.map
+//# sourceMappingURL=ChatBot.module.js.map
 
 /***/ }),
 
-/***/ 307:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyNumberPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRating; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_tabs__ = __webpack_require__(196);
+
+
+var HTML_TEMPLATE = "\n<div class=\"ionic3-star-rating\">\n  <button *ngFor=\"let index of [0,1,2,3,4]\" id=\"{{index}}\" type=\"button\" ion-button icon-only (click)=\"changeRating($event)\">\n    <ion-icon [ngStyle]=\"{'color':index < this.Math.round(this.parseFloat(rating)) ? activeColor : defaultColor }\" name=\"{{index < this.Math.round(this.parseFloat(rating)) ? activeIcon : defaultIcon}}\"></ion-icon>\n  </button>\n</div>\n";
+var CSS_STYLE = "\n    .ionic3-star-rating .button {\n        height: 28px;\n        background: none;\n        box-shadow: none;\n        -webkit-box-shadow: none;\n        width: 28px;\n    }\n    .ionic3-star-rating .button ion-icon {\n        font-size: 32px;\n    }\n";
+var StarRating = (function () {
+    function StarRating(events) {
+        this.events = events;
+        this.rating = 3;
+        this.readonly = "false";
+        this.activeColor = '#488aff';
+        this.defaultColor = '#f4f4f4';
+        this.activeIcon = 'ios-star';
+        this.defaultIcon = 'ios-star-outline';
+        this.Math = Math;
+        this.parseFloat = parseFloat;
+    }
+    StarRating.prototype.changeRating = function (event) {
+        if (this.readonly && this.readonly === "true")
+            return;
+        // event is different for firefox and chrome
+        this.rating = event.target.id ? parseInt(event.target.id) + 1 : parseInt(event.target.parentElement.id) + 1;
+        // subscribe this event to get the changed value in ypour parent compoanent
+        this.events.publish('star-rating:changed', this.rating);
+    };
+    StarRating.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
+                    selector: 'ionic3-star-rating',
+                    template: HTML_TEMPLATE,
+                    styles: [CSS_STYLE]
+                },] },
+    ];
+    /** @nocollapse */
+    StarRating.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */], },
+    ]; };
+    StarRating.propDecorators = {
+        "rating": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "readonly": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "activeColor": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "defaultColor": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "activeIcon": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "defaultIcon": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    };
+    return StarRating;
+}());
+
+//# sourceMappingURL=ionic3-star-rating-component.js.map
+
+/***/ }),
+
+/***/ 297:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(298);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
+/* unused harmony namespace reexport */
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 298:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRatingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
+
+
+
+var StarRatingModule = (function () {
+    function StarRatingModule() {
+    }
+    StarRatingModule.forRoot = function () {
+        return {
+            ngModule: StarRatingModule,
+        };
+    };
+    StarRatingModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [
+                        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */]
+                    ],
+                    declarations: [
+                        __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__["a" /* StarRating */]
+                    ],
+                    exports: [
+                        __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__["a" /* StarRating */]
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    StarRatingModule.ctorParameters = function () { return []; };
+    return StarRatingModule;
+}());
+
+//# sourceMappingURL=ionic3-star-rating.module.js.map
+
+/***/ }),
+
+/***/ 301:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatBot; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,50 +171,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var VerifyNumberPage = /** @class */ (function () {
-    function VerifyNumberPage(navCtrl, navParams, toastCtrl) {
+var ChatBot = /** @class */ (function () {
+    function ChatBot(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.toastCtrl = toastCtrl;
     }
-    VerifyNumberPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad VerifyNumberPage");
+    ChatBot.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FiltersPage');
     };
-    VerifyNumberPage.prototype.VerifyNumber = function () {
-        var message = this.toastCtrl.create({
-            message: "Verification Success",
-            position: "bottom",
-            duration: 1000
-        });
-        message.present();
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__tabs_tabs__["a" /* TabsPage */]);
-        console.log("verify number");
-        //write code to verify code
+    ChatBot.prototype.clear = function () {
+        console.log('clear');
     };
-    VerifyNumberPage.prototype.resendCode = function () {
-        this.otp = "";
-        var message = this.toastCtrl.create({
-            message: "OTP is Sent to your Register Mobile Number",
-            position: "bottom",
-            duration: 1000
-        });
-        message.present();
-        console.log("resend code");
-        //write code to resend OTP
+    ChatBot.prototype.sendChat = function () {
+        this.msgs.push(this.chatMsg);
+        var msg = { type: "in", text: this.chatMsg };
+        this.msgs.push(msg);
+        this.chatMsg = "";
     };
-    VerifyNumberPage = __decorate([
+    ChatBot.prototype.ngOnInit = function () {
+        this.msgs = [];
+        var msg = { type: "in", text: "Hello, How can i help you?" };
+        this.msgs.push(msg);
+    };
+    ChatBot = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-verify-number",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/verify-number/verify-number.html"*/'<ion-content padding>\n  <h3 class="page-title">Enter OTP</h3>\n  <div class="top-pera">\n    <p>\n      Enter 6 digit number to validate mobile number\n    </p>\n  </div>\n  <div class=\'masked\'>\n    <input type="text" maxlength="6" [(ngModel)]="otp">\n  </div>\n  <div class=\'masked2\'>\n  </div>\n  <div class="code-container">\n  </div>\n  <div class="button-container">\n    <button ion-button block color="primary" (tap)="VerifyNumber()" tappable>Verify</button>\n  </div>\n  <div class="footer-text-container">\n    <span class="footer-text" (tap)="resendCode()">Resend code</span>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/verify-number/verify-number.html"*/
+            selector: 'chatbot',template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\chatbot\chat.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>ChatBot</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="primary">\n\n        <ion-icon name="md-time"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  \n\n    <div class="messaging">\n\n          <div class="inbox_msg">\n\n    \n\n            <div class="mesgs">\n\n              <div class="msg_history" *ngFor="let msg of msgs">\n\n                <div class="incoming_msg" *ngIf="msg.type==\'in\'">\n\n                  <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>\n\n                  <div class="received_msg">\n\n                    <div class="received_withd_msg">\n\n                      <p>{{msg.text}}</p>\n\n                      \n\n                  </div>\n\n                </div>\n\n                </div>\n\n                <div class="outgoing_msg" *ngIf="msg.type==\'out\'">\n\n                  <div class="sent_msg">\n\n                    <p>{{msg.text}}</p>\n\n                </div>\n\n                \n\n                \n\n                \n\n              \n\n    \n\n            </div>\n\n          </div>\n\n        \n\n      </div>\n\n      </div>\n\n      </div>\n\n</ion-content>\n\n\n\n<ion-footer no-shadow>\n\n  <ion-toolbar position="bottom">\n\n    <div class="bottom-text">\n\n      <input type="text" [(ngModel)]="chatMsg" />\n\n      <div class="send-btn" (tap)="sendChat()"><ion-icon name="send"></ion-icon>\n\n      </div>\n\n    </div>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\chatbot\chat.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
-    ], VerifyNumberPage);
-    return VerifyNumberPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], ChatBot);
+    return ChatBot;
 }());
 
-//# sourceMappingURL=verify-number.js.map
+//# sourceMappingURL=ChatBot.js.map
 
 /***/ })
 

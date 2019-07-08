@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 286:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserHomePageModule", function() { return UserHomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_home__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_home__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var UserHomePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,13 +98,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(298);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* unused harmony namespace reexport */
 
 
@@ -112,13 +112,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRatingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
 
 
@@ -153,13 +153,25 @@ var StarRatingModule = (function () {
 
 /***/ }),
 
-/***/ 305:
+/***/ 299:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return host; });
+var host = "http://localhost:8080";
+//# sourceMappingURL=config.js.map
+
+/***/ }),
+
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserHomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_config__ = __webpack_require__(299);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -171,64 +183,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var UserHomePage = /** @class */ (function () {
-    function UserHomePage(navCtrl, navParams) {
+    function UserHomePage(navCtrl, navParams, http) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.restaurants = [
-            {
-                name: "Delmonico Steak",
-                time: "15",
-                address: "Authentic Japanese 66 Park Ave",
-                openign_time: "9 am - 10 pm",
-                star: "4",
-                rating: "4.4 (232)",
-                image: "assets/imgs/slider2.jpg"
-            },
-            {
-                name: "Molyvos",
-                time: "25",
-                address: "Areek 871 7th Ave",
-                openign_time: "Closed",
-                star: "5",
-                rating: "4.3 (232)",
-                image: "assets/imgs/slider3.jpg"
-            },
-            {
-                name: "Delmonico Steak",
-                time: "15",
-                address: "Authentic Japanese 66 Park Ave",
-                openign_time: "9 am - 10 pm",
-                star: "5",
-                rating: "4.6 (232)",
-                image: "assets/imgs/slider1.jpg"
-            },
-            {
-                name: "Trattoria Bianca",
-                time: "35",
-                address: "Italian 481 8th Ave",
-                openign_time: "8 am - 11 pm",
-                star: "3",
-                rating: "4.1 (123)",
-                image: "assets/imgs/slider2.jpg"
-            },
-            {
-                name: "Henry at Life Hotel",
-                time: "15",
-                address: "African 19 W 31st St",
-                openign_time: "10 am - 12 pm",
-                star: "4",
-                rating: "4.8 (323)",
-                image: "assets/imgs/slider3.jpg"
-            }
-        ];
+        this.http = http;
     }
+    UserHomePage.prototype.ngOnInit = function () {
+        var _this = this;
+        var cart = { items: [], tPrice: 0 };
+        localStorage['cart'] = JSON.stringify(cart);
+        localStorage['userMobile'] = "0000000000";
+        this.http.get(__WEBPACK_IMPORTED_MODULE_3__config_config__["a" /* host */] + "/getRestaurents", {}).toPromise()
+            .then(function (data) {
+            _this.restaurants = data['restaurants'];
+            console.log(data); // data received by server
+        });
+    };
     UserHomePage.prototype.goProductList = function (restaurant) {
         console.log("products", restaurant);
         this.navCtrl.push("ProductListPage", { restaurant: restaurant });
     };
     UserHomePage.prototype.filter = function () {
-        this.navCtrl.push("FiltersPage");
+        this.navCtrl.push("ChatBot");
     };
     UserHomePage.prototype.ionViewWillEnter = function () {
         this.address = localStorage.getItem("deliveryAddress");
@@ -241,9 +220,9 @@ var UserHomePage = /** @class */ (function () {
     };
     UserHomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-user-home",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-home/user-home.html"*/'<ion-content>\n  <ion-row class="header_section">\n    <ion-col col-2>\n      <ion-buttons left>\n        <button ion-button clear icon-only color="primary">\n          <ion-icon name="md-list"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n    <ion-col col-8>\n      <ion-item no-lines class="delivery_address" (click)="changeAddress()">\n        <ion-icon name="ios-pin-outline" item-start></ion-icon>\n        {{ address }}\n      </ion-item>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button clear icon-only color="primary">\n          <ion-icon name="md-time"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n  <div class="main_section">\n    <ion-label class="explore_lbl">Explore</ion-label>\n    <ion-searchbar mode="md"></ion-searchbar>\n    <div class="restaurant">\n      <ion-card\n        class="restaurant_card"\n        *ngFor="let restaurant of restaurants; let i = index"\n        (tap)="goProductList(restaurant)"\n        tappable\n      >\n        <img src="{{ restaurant.image }}" class="main_img" />\n        <ion-card-content> <div class="card_content"></div> </ion-card-content>\n        <div class="restaurant_content">\n          <ion-row>\n            <ion-col col-6>\n              <h2 class="restaurant_name">{{ restaurant.name }}</h2>\n            </ion-col>\n            <ion-col col-6>\n              <h2 class="restaurant_time">{{ restaurant.time }} min</h2>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <h2 class="restaurant_address">{{ restaurant.address }}</h2>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-6>\n              <div class="rating_sections">\n                <ionic3-star-rating\n                  activeIcon="ios-star"\n                  defaultIcon="ios-star-outline"\n                  activeColor="#eaea80"\n                  defaultColor="#f4f4f4"\n                  readonly="true"\n                  [rating]="5"\n                >\n                </ionic3-star-rating>\n                <h2 class="user_rating">{{ restaurant.rating }}</h2>\n              </div>\n            </ion-col>\n            <ion-col col-6>\n              <h2 class="restaurant_time_opening">\n                {{ restaurant.openign_time }}\n              </h2>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n    </div>\n  </div>\n  <ion-fab right bottom (tap)="filter()">\n    <button ion-fab color="primary" mini>\n      <ion-icon name="md-funnel"></ion-icon>\n    </button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-home/user-home.html"*/
+            selector: "page-user-home",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\user-home\user-home.html"*/'<ion-content>\n\n  <ion-row class="header_section">\n\n    <ion-col col-2>\n\n      <ion-buttons left>\n\n        <button ion-button clear icon-only color="primary">\n\n          <ion-icon name="md-list"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n    </ion-col>\n\n    <ion-col col-8>\n\n      <ion-item no-lines class="delivery_address" (click)="changeAddress()">\n\n        <ion-icon name="ios-pin-outline" item-start></ion-icon>\n\n        {{ address }}\n\n      </ion-item>\n\n    </ion-col>\n\n    <ion-col col-2>\n\n      <ion-buttons end>\n\n        <button ion-button clear icon-only color="primary">\n\n          <ion-icon name="md-cart"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n    </ion-col>\n\n  </ion-row>\n\n  <div class="main_section">\n\n    <ion-label class="explore_lbl">Explore</ion-label>\n\n    <ion-searchbar mode="md"></ion-searchbar>\n\n    <div class="restaurant">\n\n      <ion-card\n\n        class="restaurant_card"\n\n        *ngFor="let restaurant of restaurants; let i = index"\n\n        (tap)="goProductList(restaurant)"\n\n        tappable\n\n      >\n\n        <img src="{{ restaurant.image }}" class="main_img" />\n\n        <ion-card-content> <div class="card_content"></div> </ion-card-content>\n\n        <div class="restaurant_content">\n\n          <ion-row>\n\n            <ion-col col-6>\n\n              <h2 class="restaurant_name">{{ restaurant.name }}</h2>\n\n            </ion-col>\n\n            <ion-col col-6>\n\n              <h2 class="restaurant_time">{{ restaurant.time }} min</h2>\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col>\n\n              <h2 class="restaurant_address">{{ restaurant.address }}</h2>\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col col-6>\n\n              <div class="rating_sections">\n\n                <ionic3-star-rating\n\n                  activeIcon="ios-star"\n\n                  defaultIcon="ios-star-outline"\n\n                  activeColor="#eaea80"\n\n                  defaultColor="#f4f4f4"\n\n                  readonly="true"\n\n                  [rating]="5"\n\n                >\n\n                </ionic3-star-rating>\n\n                <h2 class="user_rating">{{ restaurant.rating }}</h2>\n\n              </div>\n\n            </ion-col>\n\n            <ion-col col-6>\n\n              <h2 class="restaurant_time_opening">\n\n                {{ restaurant.openign_time }}\n\n              </h2>\n\n            </ion-col>\n\n          </ion-row>\n\n        </div>\n\n      </ion-card>\n\n    </div>\n\n  </div>\n\n  <ion-fab right bottom (tap)="filter()">\n\n    <button ion-fab color="primary" mini>\n\n      <ion-icon name="chatbubbles"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\user-home\user-home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], UserHomePage);
     return UserHomePage;
 }());

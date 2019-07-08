@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 287:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserProfilePageModule", function() { return UserProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductListPageModule", function() { return ProductListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_profile__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_list__ = __webpack_require__(309);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var UserProfilePageModule = /** @class */ (function () {
-    function UserProfilePageModule() {
+var ProductListPageModule = /** @class */ (function () {
+    function ProductListPageModule() {
     }
-    UserProfilePageModule = __decorate([
+    ProductListPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__user_profile__["a" /* UserProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__product_list__["a" /* ProductListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__user_profile__["a" /* UserProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__product_list__["a" /* ProductListPage */]),
             ],
         })
-    ], UserProfilePageModule);
-    return UserProfilePageModule;
+    ], ProductListPageModule);
+    return ProductListPageModule;
 }());
 
-//# sourceMappingURL=user-profile.module.js.map
+//# sourceMappingURL=product-list.module.js.map
 
 /***/ }),
 
-/***/ 306:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return host; });
+var host = "http://localhost:8080";
+//# sourceMappingURL=config.js.map
+
+/***/ }),
+
+/***/ 309:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_config__ = __webpack_require__(299);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,66 +68,58 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the UserProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var UserProfilePage = /** @class */ (function () {
-    function UserProfilePage(navCtrl, navParams, toastCtrl, app) {
+
+
+var ProductListPage = /** @class */ (function () {
+    function ProductListPage(navCtrl, navParams, http) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.toastCtrl = toastCtrl;
-        this.app = app;
-        this.placeholderPicture = "https://api.adorable.io/avatar/200/bob";
-        this.enableNotifications = true;
-        this.languages = ["English", "Portuguese", "French"];
-        this.paymentMethods = ["Paypal", "Credit Card"];
-        this.currencies = ["USD", "BRL", "EUR"];
-        this.user = {
-            name: "John Doe",
-            imageUrl: "assets/imgs/pic.png"
-        };
+        this.http = http;
+        // Getting the Data from Home Page using NavParams
+        this.rest_images = this.navParams.get("restaurant").image;
+        this.rest_name = this.navParams.get("restaurant").name;
+        this.rest_rating = this.navParams.get("restaurant").rating;
     }
-    UserProfilePage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad UserProfilePage");
+    ProductListPage.prototype.ionViewWillEnter = function () {
+        this.address = localStorage.getItem("deliveryAddress");
     };
-    UserProfilePage.prototype.toggleNotifications = function () {
-        if (this.enableNotifications) {
-            var message = this.toastCtrl.create({
-                message: "Notifications enabled.",
-                duration: 1000,
-                position: "bottom"
-            });
-            message.present();
-        }
-        else {
-            var message = this.toastCtrl.create({
-                message: "Notifications disabled..",
-                duration: 1000,
-                position: "bottom"
-            });
-            message.present();
-        }
+    ProductListPage.prototype.changeAddress = function () {
+        this.navCtrl.push("NewAddressPage");
     };
-    UserProfilePage.prototype.logOut = function () {
-        // this.navCtrl.setRoot("LoginPage");
-        this.app.getRootNav().setRoot("LoginPage");
+    ProductListPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad ProductListPage");
     };
-    UserProfilePage = __decorate([
+    ProductListPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.items = [];
+        this.http.get(__WEBPACK_IMPORTED_MODULE_3__config_config__["a" /* host */] + "/getItems").toPromise()
+            .then(function (data) {
+            _this.items = data['items'];
+        });
+    };
+    ProductListPage.prototype.add = function () {
+        var cart = JSON.parse(localStorage['cart']);
+        var items = cart.items;
+        var item = { title: "Indian Tadka", price: "Rs. 150" };
+        items.push(item);
+        cart.items = items;
+        localStorage['cart'] = JSON.stringify(cart);
+        alert("Item added successfully");
+    };
+    ProductListPage.prototype.goCart = function () {
+        this.navCtrl.push("UserCartPage");
+    };
+    ProductListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-user-profile",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-profile/user-profile.html"*/'<ion-header>\n  <ion-navbar primary> <ion-title>User Settings</ion-title> </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-list>\n    <ion-list-header>\n      <ion-avatar item-start>\n        <img [src]="user.imageUrl ? user.imageUrl : placeholderPicture" />\n      </ion-avatar>\n      <p class="username">{{ user.name }}</p>\n    </ion-list-header>\n  </ion-list>\n  <ion-list no-border>\n    <ion-list-header> General </ion-list-header>\n    <ion-item>\n      <ion-icon name="settings" item-start></ion-icon>\n      <ion-label>App Language</ion-label>\n      <ion-select [(ngModel)]="language">\n        <ion-option *ngFor="let language of languages" [value]="language">{{\n          language\n        }}</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-toggle\n        [(ngModel)]="enableNotifications"\n        (click)="toggleNotifications()"\n      ></ion-toggle>\n      <ion-label class="label"> Enable notifications </ion-label>\n      <ion-icon name="notifications" item-start></ion-icon>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header> Currency </ion-list-header>\n    <ion-item>\n      <ion-icon name="card" item-start></ion-icon>\n      <ion-label>Payment Method</ion-label>\n      <ion-select [(ngModel)]="paymentMethod">\n        <ion-option *ngFor="let method of paymentMethods" [value]="method">{{\n          method\n        }}</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="logo-usd" item-start></ion-icon>\n      <ion-label>Currency</ion-label>\n      <ion-select [(ngModel)]="currency">\n        <ion-option *ngFor="let currency of currencies" [value]="currency">{{\n          currency\n        }}</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header> Other </ion-list-header>\n    <ion-item>\n      <ion-icon name="power" item-start></ion-icon>\n      <button ion-button (click)="logOut()" item-end>Logout</button>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-profile/user-profile.html"*/
+            selector: "page-product-list",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\product-list\product-list.html"*/'<ion-content>\n\n  <div class="header">\n\n    <img src="{{ rest_images }}" class="rest_image" />\n\n    <ion-label class="rest_name">{{ rest_name }}</ion-label>\n\n    <ion-row class="header_section">\n\n      <ion-col col-2>\n\n        <ion-buttons left>\n\n          <button ion-button clear icon-only color="primary">\n\n            <ion-icon name="md-list"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-8>\n\n        <ion-item no-lines class="delivery_address" (click)="changeAddress()">\n\n          <ion-icon name="ios-pin-outline" item-start></ion-icon>\n\n          {{ address }}\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <ion-buttons end>\n\n          <button ion-button clear icon-only color="primary" (tap)="goCart()">\n\n            <ion-icon name="md-cart" ></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="rest_details">\n\n      <ion-col col-6>\n\n        <ion-buttons>\n\n          <button ion-button clear icon-only color="light">\n\n            <ion-icon name="ios-star" color="primary"></ion-icon>\n\n            {{ rest_rating }}\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-buttons>\n\n          <button ion-button clear icon-only color="light">\n\n            <ion-icon name="ios-lock" color="primary"></ion-icon>\n\n            Order from Rs. 100\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row class="product_search">\n\n      <ion-col> <ion-searchbar mode="ios"></ion-searchbar> </ion-col>\n\n    </ion-row>\n\n  </div>\n\n\n\n  <div class="allProduct">\n\n   <ion-card *ngFor="let item of items">\n\n      <img src="[item.img]" class="side_img" />\n\n      <ion-card-content class="product_sections">\n\n        <ion-card-title> {{item.title}} </ion-card-title>\n\n        <p class="product_descriptions">\n\n          {{item.desc}}\n\n        </p>\n\n        <ion-row>\n\n          <ion-col col-6>\n\n            <ion-label class="product_price">{{item.price}}</ion-label>\n\n          </ion-col>\n\n          <ion-col col-6>\n\n            <button ion-button outline round small (tap)="add()">Add</button>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\product-list\product-list.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]])
-    ], UserProfilePage);
-    return UserProfilePage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object])
+    ], ProductListPage);
+    return ProductListPage;
+    var _a, _b, _c;
 }());
 
-//# sourceMappingURL=user-profile.js.map
+//# sourceMappingURL=product-list.js.map
 
 /***/ })
 

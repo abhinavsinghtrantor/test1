@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 280:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderHistoryPageModule", function() { return OrderHistoryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_history__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_history__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,7 +36,7 @@ var OrderHistoryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93,13 +93,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(298);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* unused harmony namespace reexport */
 
 
@@ -107,13 +107,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRatingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
 
 
@@ -152,9 +152,21 @@ var StarRatingModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return host; });
+var host = "http://localhost:8080";
+//# sourceMappingURL=config.js.map
+
+/***/ }),
+
+/***/ 308:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderHistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_config__ = __webpack_require__(299);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -166,20 +178,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var OrderHistoryPage = /** @class */ (function () {
-    function OrderHistoryPage(navCtrl) {
+    function OrderHistoryPage(navCtrl, http) {
         this.navCtrl = navCtrl;
+        this.http = http;
         this.orders = "current";
     }
     OrderHistoryPage.prototype.ionViewDidLoad = function () { };
     OrderHistoryPage.prototype.goDetails = function (rate) {
         this.navCtrl.push("OrderDetailsPage", { rate: rate });
     };
+    OrderHistoryPage.prototype.ngOnInit = function () {
+        var _this = this;
+        debugger;
+        this.http.get(__WEBPACK_IMPORTED_MODULE_3__config_config__["a" /* host */] + "/getOrders").toPromise()
+            .then(function (data) {
+            _this.corders = data['orders'];
+        });
+    };
     OrderHistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-order-history",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/order-history/order-history.html"*/'<ion-content>\n  <div class="header">\n    <ion-row class="header_section">\n      <ion-col col-2>\n        <ion-buttons left>\n          <button ion-button clear icon-only color="primary">\n            <ion-icon name="md-list"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col col-8>\n        <ion-item no-lines class="title"> Orders </ion-item>\n      </ion-col>\n      <ion-col col-2> </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="main_content">\n    <div padding>\n      <ion-segment [(ngModel)]="orders" mode="md">\n        <ion-segment-button value="current"> Current </ion-segment-button>\n        <ion-segment-button value="past"> Past </ion-segment-button>\n      </ion-segment>\n    </div>\n\n    <div [ngSwitch]="orders">\n      <ion-list *ngSwitchCase="\'current\'">\n        <ion-card class="c_orders">\n          <ion-card-content>\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/slider1.jpg" />\n              </ion-thumbnail>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="order_time">25 Aug 9.45</p>\n                </ion-col>\n                <ion-col col-6>\n                  <p text-right class="order_price">$4.5</p>\n                </ion-col>\n              </ion-row>\n              <h2 class="rest_name">Henry at Life Hotel</h2>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="assigned" text-wrap>• Order Assigned</p>\n                </ion-col>\n                <ion-col col-6 (click)="goDetails(\'yes\')">\n                  <p text-right class="details">Detail</p>\n                </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-card-content>\n        </ion-card>\n        <ion-card class="c_orders">\n          <ion-card-content>\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/slider1.jpg" />\n              </ion-thumbnail>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="order_time">25 Aug 10.45</p>\n                </ion-col>\n                <ion-col col-6>\n                  <p text-right class="order_price">$6.5</p>\n                </ion-col>\n              </ion-row>\n              <h2 class="rest_name">Trattoria Bianca</h2>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="waiting" text-wrap>• Waiting for Processing</p>\n                </ion-col>\n                <ion-col col-6 (click)="goDetails(\'no\')">\n                  <p text-right class="details">Detail</p>\n                </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-card-content>\n        </ion-card>\n        <ion-card class="c_orders">\n          <ion-card-content>\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/slider1.jpg" />\n              </ion-thumbnail>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="order_time">25 Aug 8.45</p>\n                </ion-col>\n                <ion-col col-6>\n                  <p text-right class="order_price">$6.5</p>\n                </ion-col>\n              </ion-row>\n              <h2 class="rest_name">Delmonico Steak</h2>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="picked" text-wrap>• Product Picked</p>\n                </ion-col>\n                <ion-col col-6 (click)="goDetails(\'yes\')">\n                  <p text-right class="details">Detail</p>\n                </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-card-content>\n        </ion-card>\n      </ion-list>\n\n      <ion-list *ngSwitchCase="\'past\'">\n        <ion-card class="p_orders">\n          <ion-card-content>\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/slider1.jpg" />\n              </ion-thumbnail>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="order_time">22 Aug 8.45</p>\n                </ion-col>\n                <ion-col col-6>\n                  <p text-right class="order_price">$6.5</p>\n                </ion-col>\n              </ion-row>\n              <h2 class="rest_name">Delmonico Steak</h2>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="deliverd" text-wrap>• Order Delivered</p>\n                </ion-col>\n                <ion-col col-6> </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-card-content>\n          <hr />\n          <ion-row>\n            <ion-col col-6>\n              <div class="rating_sections" text-center>\n                <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#eaea80"\n                  defaultColor="#f4f4f4" readonly="true" [rating]="5">\n                </ionic3-star-rating>\n              </div>\n            </ion-col>\n            <ion-col col-6 (click)="goDetails(\'yes\')">\n              <p text-center class="details">Detail</p>\n            </ion-col>\n          </ion-row>\n        </ion-card>\n        <ion-card class="p_orders">\n          <ion-card-content>\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/slider1.jpg" />\n              </ion-thumbnail>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="order_time">22 Aug 8.45</p>\n                </ion-col>\n                <ion-col col-6>\n                  <p text-right class="order_price">$6.5</p>\n                </ion-col>\n              </ion-row>\n              <h2 class="rest_name">Delmonico Steak</h2>\n              <ion-row>\n                <ion-col col-6>\n                  <p class="Cancelled" text-wrap>• Order Cancelled</p>\n                </ion-col>\n                <ion-col col-6> </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-card-content>\n          <hr />\n          <ion-row>\n            <ion-col col-6>\n              <p class="repeat" text-center>• Repeat Order</p>\n            </ion-col>\n            <ion-col col-6>\n              <p text-center class="details" (click)="goDetails(\'no\')">\n                Detail\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-card>\n      </ion-list>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/order-history/order-history.html"*/
+            selector: "page-order-history",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\order-history\order-history.html"*/'<ion-content>\n\n  <div class="header">\n\n    <ion-row class="header_section">\n\n      <ion-col col-2>\n\n        <ion-buttons left>\n\n          <button ion-button clear icon-only color="primary">\n\n            <ion-icon name="md-list"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-8>\n\n        <ion-item no-lines class="title"> Orders </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2> </ion-col>\n\n    </ion-row>\n\n  </div>\n\n\n\n  <div class="main_content">\n\n    <div padding>\n\n      <ion-segment [(ngModel)]="orders" mode="md">\n\n        <ion-segment-button value="current"> Current </ion-segment-button>\n\n        <ion-segment-button value="past"> Past </ion-segment-button>\n\n      </ion-segment>\n\n    </div>\n\n\n\n    <div [ngSwitch]="orders">\n\n      <ion-list *ngSwitchCase="\'current\'">\n\n        <ion-card class="c_orders" *ngFor="let order of corders">\n\n          <ion-card-content>\n\n            <ion-item>\n\n              <ion-thumbnail item-start>\n\n                <img src="[order.img]" />\n\n              </ion-thumbnail>\n\n              <ion-row>\n\n                <ion-col col-6>\n\n                  <p class="order_time">{{order.time}}</p>\n\n                </ion-col>\n\n                <ion-col col-6>\n\n                  <p text-right class="order_price">{{order.price}}</p>\n\n                </ion-col>\n\n              </ion-row>\n\n              <h2 class="rest_name">{{order.name}}l</h2>\n\n              <ion-row>\n\n                <ion-col col-6>\n\n                  <p class="assigned" text-wrap>• {{order.status}}</p>\n\n                </ion-col>\n\n                <ion-col col-6 (click)="goDetails(\'yes\')">\n\n                  <p text-right class="details">Detail</p>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-item>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      </ion-list>\n\n\n\n      <ion-list *ngSwitchCase="\'past\'">\n\n        \n\n      </ion-list>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\order-history\order-history.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], OrderHistoryPage);
     return OrderHistoryPage;
 }());

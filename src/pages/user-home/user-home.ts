@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { host } from "../../config/config";
 
 @IonicPage()
 @Component({
@@ -7,61 +9,27 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "user-home.html"
 })
 export class UserHomePage {
-  restaurants = [
-    {
-      name: "Delmonico Steak",
-      time: "15",
-      address: "Authentic Japanese 66 Park Ave",
-      openign_time: "9 am - 10 pm",
-      star: "4",
-      rating: "4.4 (232)",
-      image: "assets/imgs/slider2.jpg"
-    },
-    {
-      name: "Molyvos",
-      time: "25",
-      address: "Areek 871 7th Ave",
-      openign_time: "Closed",
-      star: "5",
-      rating: "4.3 (232)",
-      image: "assets/imgs/slider3.jpg"
-    },
-    {
-      name: "Delmonico Steak",
-      time: "15",
-      address: "Authentic Japanese 66 Park Ave",
-      openign_time: "9 am - 10 pm",
-      star: "5",
-      rating: "4.6 (232)",
-      image: "assets/imgs/slider1.jpg"
-    },
-    {
-      name: "Trattoria Bianca",
-      time: "35",
-      address: "Italian 481 8th Ave",
-      openign_time: "8 am - 11 pm",
-      star: "3",
-      rating: "4.1 (123)",
-      image: "assets/imgs/slider2.jpg"
-    },
-    {
-      name: "Henry at Life Hotel",
-      time: "15",
-      address: "African 19 W 31st St",
-      openign_time: "10 am - 12 pm",
-      star: "4",
-      rating: "4.8 (323)",
-      image: "assets/imgs/slider3.jpg"
-    }
-  ];
+  restaurants : any;
   address: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {}
+  ngOnInit(){
+    let cart = {items : [], tPrice : 0};
+    localStorage['cart'] = JSON.stringify(cart);
+    localStorage['userMobile'] = "0000000000";
+
+    this.http.get(host+"/getRestaurents", {}).toPromise()
+  .then(data => {
+    this.restaurants = data['restaurants'];
+    console.log(data); // data received by server
+
+  })
+  }
   goProductList(restaurant: any) {
     console.log("products", restaurant);
     this.navCtrl.push("ProductListPage", { restaurant: restaurant });
   }
   filter() {
-    this.navCtrl.push("FiltersPage");
+    this.navCtrl.push("ChatBot");
   }
   ionViewWillEnter() {
     this.address = localStorage.getItem("deliveryAddress");

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TabsPage } from "../tabs/tabs";
 
 /**
  * Generated class for the LoginPage page.
@@ -24,5 +25,11 @@ export class LoginPage {
   goVerifyPage(){
     console.log("go verifypage");
     this.navCtrl.push('VerifyNumberPage');
+  }
+
+  ngOnInit(){
+    if(localStorage['user']){
+      this.navCtrl.setRoot(TabsPage);
+    }
   }
 }

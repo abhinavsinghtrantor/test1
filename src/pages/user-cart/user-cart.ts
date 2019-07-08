@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 })
 export class UserCartPage {
   address;
+  items;
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
@@ -21,5 +22,10 @@ export class UserCartPage {
   }
   changeAddress() {
     this.navCtrl.push("NewAddressPage");
+  }
+
+  ngOnInit(){
+    let cart = JSON.parse(localStorage['cart']);
+    this.items = cart.items;
   }
 }

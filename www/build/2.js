@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 278:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderDetailsPageModule", function() { return OrderDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_details__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_details__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,7 +36,7 @@ var OrderDetailsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93,13 +93,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(298);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* unused harmony namespace reexport */
 
 
@@ -107,13 +107,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRatingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
 
 
@@ -148,7 +148,7 @@ var StarRatingModule = (function () {
 
 /***/ }),
 
-/***/ 297:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -200,7 +200,7 @@ var OrderDetailsPage = /** @class */ (function () {
     };
     OrderDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-order-details",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/order-details/order-details.html"*/'<ion-content>\n  <div class="header">\n    <ion-row class="header_section">\n      <ion-col col-2>\n        <ion-buttons left>\n          <button ion-button clear icon-only color="primary">\n            <ion-icon name="md-list"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col col-8>\n        <ion-item no-lines class="title">Henry at Life Hotel </ion-item>\n      </ion-col>\n      <ion-col col-2> </ion-col>\n    </ion-row>\n  </div>\n  <div class="main_content">\n    <ion-row>\n      <ion-col col-6>\n        <p class="delivered" text-center>• Order Delivered</p>\n      </ion-col>\n      <ion-col col-6>\n        <p class="order_time" text-center>25 Aug 9.45</p>\n      </ion-col>\n    </ion-row>\n    <ion-card class="d_orders" *ngIf="haveRate">\n      <ion-card-content>\n        <ion-label text-center class="rateTitle"\n          >Please Rate Delivery Service</ion-label\n        >\n        <div class="rating_sections" text-center>\n          <ionic3-star-rating\n            activeIcon="ios-star"\n            defaultIcon="ios-star-outline"\n            activeColor="#eaea80"\n            defaultColor="#f4f4f4"\n            readonly="true"\n            [rating]="5"\n          >\n          </ionic3-star-rating>\n          <ion-label text-center class="rateBtn">Rate</ion-label>\n        </div>\n      </ion-card-content>\n    </ion-card>\n    <ion-card class="d_orders" *ngIf="!haveRate">\n      <ion-card-content>\n        <ion-label text-center class="rateTitle"\n          >Please Rate Delivery Service</ion-label\n        >\n        <div class="rating_sections" text-center>\n          <ionic3-star-rating\n            activeIcon="ios-star"\n            defaultIcon="ios-star-outline"\n            activeColor="#eaea80"\n            defaultColor="#f4f4f4"\n            readonly="false"\n            [rating]="0"\n          >\n          </ionic3-star-rating>\n          <ion-label text-center class="rateBtn">Rate</ion-label>\n        </div>\n      </ion-card-content>\n    </ion-card>\n    <ion-card class="d_orders">\n      <ion-card-content>\n        <ion-label text-left class="rateBtn"\n          >To: 77 East Cheyenne Ave.Las Vegas</ion-label\n        >\n\n        <ion-label text-left class="rateTitle"\n          >From : Delmonico Steak</ion-label\n        >\n      </ion-card-content>\n    </ion-card>\n    <div class="card_div">\n      <ion-row>\n        <ion-col>\n          <ion-label class="card_lbl1">Payment Method</ion-label>\n        </ion-col>\n      </ion-row>\n      <ion-slides slidesPerView="1.5" style="height:100px;">\n        <ion-slide>\n          <ion-card>\n            <ion-item class="pay_card_active">\n              <ion-icon name="ios-card-outline" item-start></ion-icon>\n              * * 23 45\n            </ion-item>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n    </div>\n    <div class="all_price">\n      <ion-list no-lines>\n        <ion-item>\n          <ion-label text-left class="comman">Basket Charges</ion-label>\n          <ion-label text-right class="charge_price">$33.50</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label text-left class="comman">Delivery Charges</ion-label>\n          <ion-label text-right class="charge_price">$2.50</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label text-left class="total_amont"\n            >Total Amount Payable</ion-label\n          >\n          <ion-label text-right class="total_price">$36.00</ion-label>\n        </ion-item>\n      </ion-list>\n    </div>\n    <button\n      ion-button\n      block\n      round\n      color="primary"\n      class="pay_btn"\n      (click)="report()"\n    >\n      Report an Issue with Order\n    </button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/order-details/order-details.html"*/
+            selector: "page-order-details",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\order-details\order-details.html"*/'<ion-content>\n\n  <div class="header">\n\n    <ion-row class="header_section">\n\n      <ion-col col-2>\n\n        <ion-buttons left>\n\n          <button ion-button clear icon-only color="primary">\n\n            <ion-icon name="md-list"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-8>\n\n        <ion-item no-lines class="title">Henry at Life Hotel </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2> </ion-col>\n\n    </ion-row>\n\n  </div>\n\n  <div class="main_content">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <p class="delivered" text-center>• Order Delivered</p>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <p class="order_time" text-center>25 Aug 9.45</p>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-card class="d_orders" *ngIf="haveRate">\n\n      <ion-card-content>\n\n        <ion-label text-center class="rateTitle"\n\n          >Please Rate Delivery Service</ion-label\n\n        >\n\n        <div class="rating_sections" text-center>\n\n          <ionic3-star-rating\n\n            activeIcon="ios-star"\n\n            defaultIcon="ios-star-outline"\n\n            activeColor="#eaea80"\n\n            defaultColor="#f4f4f4"\n\n            readonly="true"\n\n            [rating]="5"\n\n          >\n\n          </ionic3-star-rating>\n\n          <ion-label text-center class="rateBtn">Rate</ion-label>\n\n        </div>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-card class="d_orders" *ngIf="!haveRate">\n\n      <ion-card-content>\n\n        <ion-label text-center class="rateTitle"\n\n          >Please Rate Delivery Service</ion-label\n\n        >\n\n        <div class="rating_sections" text-center>\n\n          <ionic3-star-rating\n\n            activeIcon="ios-star"\n\n            defaultIcon="ios-star-outline"\n\n            activeColor="#eaea80"\n\n            defaultColor="#f4f4f4"\n\n            readonly="false"\n\n            [rating]="0"\n\n          >\n\n          </ionic3-star-rating>\n\n          <ion-label text-center class="rateBtn">Rate</ion-label>\n\n        </div>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-card class="d_orders">\n\n      <ion-card-content>\n\n        <ion-label text-left class="rateBtn"\n\n          >To: 77 East Cheyenne Ave.Las Vegas</ion-label\n\n        >\n\n\n\n        <ion-label text-left class="rateTitle"\n\n          >From : Delmonico Steak</ion-label\n\n        >\n\n      </ion-card-content>\n\n    </ion-card>\n\n    <div class="card_div">\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-label class="card_lbl1">Payment Method</ion-label>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-slides slidesPerView="1.5" style="height:100px;">\n\n        <ion-slide>\n\n          <ion-card>\n\n            <ion-item class="pay_card_active">\n\n              <ion-icon name="ios-card-outline" item-start></ion-icon>\n\n              * * 23 45\n\n            </ion-item>\n\n          </ion-card>\n\n        </ion-slide>\n\n      </ion-slides>\n\n    </div>\n\n    <div class="all_price">\n\n      <ion-list no-lines>\n\n        <ion-item>\n\n          <ion-label text-left class="comman">Basket Charges</ion-label>\n\n          <ion-label text-right class="charge_price">$33.50</ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-left class="comman">Delivery Charges</ion-label>\n\n          <ion-label text-right class="charge_price">$2.50</ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-left class="total_amont"\n\n            >Total Amount Payable</ion-label\n\n          >\n\n          <ion-label text-right class="total_price">$36.00</ion-label>\n\n        </ion-item>\n\n      </ion-list>\n\n    </div>\n\n    <button\n\n      ion-button\n\n      block\n\n      round\n\n      color="primary"\n\n      class="pay_btn"\n\n      (click)="report()"\n\n    >\n\n      Report an Issue with Order\n\n    </button>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\order-details\order-details.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],

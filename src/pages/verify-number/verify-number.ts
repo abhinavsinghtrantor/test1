@@ -24,6 +24,7 @@ export class VerifyNumberPage {
     console.log("ionViewDidLoad VerifyNumberPage");
   }
   VerifyNumber() {
+    localStorage['user'] = "yes";
     let message = this.toastCtrl.create({
       message: "Verification Success",
       position: "bottom",

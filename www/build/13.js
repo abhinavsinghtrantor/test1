@@ -1,14 +1,15 @@
 webpackJsonp([13],{
 
-/***/ 276:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewAddressPageModule", function() { return NewAddressPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_address__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_google_places_autocomplete__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +19,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = /** @class */ (function () {
-    function LoginPageModule() {
+
+var NewAddressPageModule = /** @class */ (function () {
+    function NewAddressPageModule() {
     }
-    LoginPageModule = __decorate([
+    NewAddressPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
-            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_2__new_address__["a" /* NewAddressPage */]],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
-            ],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__new_address__["a" /* NewAddressPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic2_google_places_autocomplete__["a" /* GooglePlacesAutocompleteComponentModule */]
+            ]
         })
-    ], LoginPageModule);
-    return LoginPageModule;
+    ], NewAddressPageModule);
+    return NewAddressPageModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=new-address.module.js.map
 
 /***/ }),
 
-/***/ 295:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewAddressPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -56,34 +57,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams) {
+var NewAddressPage = /** @class */ (function () {
+    function NewAddressPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
     }
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
+    NewAddressPage.prototype.ionViewDidLoad = function () {
+        this.loadMap();
     };
-    LoginPage.prototype.goVerifyPage = function () {
-        console.log("go verifypage");
-        this.navCtrl.push('VerifyNumberPage');
+    NewAddressPage.prototype.loadMap = function () {
+        var latLng = new google.maps.LatLng(-34.929, 138.601);
+        var mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     };
-    LoginPage = __decorate([
+    NewAddressPage.prototype.detail = function (address) {
+        console.log("adddress", address);
+        localStorage.setItem("deliveryAddress", address.description);
+        this.navCtrl.pop();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("map"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+    ], NewAddressPage.prototype, "mapElement", void 0);
+    NewAddressPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/login/login.html"*/'<ion-content padding>\n  <div class="login_content">\n    <ion-list no-lines>\n      <ion-item>\n        <ion-thumbnail item-start>\n          <img src="assets/imgs/logo.png">\n        </ion-thumbnail>\n      </ion-item>\n    </ion-list>\n    <ion-list no-lines>\n      <h2 class="login_title">Please enter your mobile <br>number to proceed</h2>\n    </ion-list>\n    <ion-row class="mobile_section">\n      <ion-col col-4>\n        <ion-item>\n            <ion-input type="tel" placeholder="+1" maxlength="3" value="+1"></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col col-8>\n          <ion-item>\n              <ion-input type="tel" placeholder="10 digit phone number" maxlength="10"></ion-input>\n          </ion-item>\n        </ion-col>\n    </ion-row>\n    <ion-list no-lines class="ok_btn">\n    <button ion-button block color="primary" (tap)="goVerifyPage()" tappable>CONTINUE</button>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/login/login.html"*/,
+            selector: "page-new-address",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\new-address\new-address.html"*/'<ion-header>\n\n  <ion-navbar> <ion-title> Choose Address </ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <google-places-autocomplete\n\n    class="pngdiv"\n\n    (callback)="detail($event[0])"\n\n    key="AIzaSyDETzUTMYQiO8um87W4LsSQrzThLcUmHJY"\n\n  ></google-places-autocomplete>\n\n\n\n  <div #map id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\new-address\new-address.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], LoginPage);
-    return LoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+    ], NewAddressPage);
+    return NewAddressPage;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=new-address.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 285:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserCartPageModule", function() { return UserCartPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyNumberPageModule", function() { return VerifyNumberPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_cart__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__verify_number__ = __webpack_require__(315);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var UserCartPageModule = /** @class */ (function () {
-    function UserCartPageModule() {
+var VerifyNumberPageModule = /** @class */ (function () {
+    function VerifyNumberPageModule() {
     }
-    UserCartPageModule = __decorate([
+    VerifyNumberPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__user_cart__["a" /* UserCartPage */],
+                __WEBPACK_IMPORTED_MODULE_2__verify_number__["a" /* VerifyNumberPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__user_cart__["a" /* UserCartPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__verify_number__["a" /* VerifyNumberPage */]),
             ],
         })
-    ], UserCartPageModule);
-    return UserCartPageModule;
+    ], VerifyNumberPageModule);
+    return VerifyNumberPageModule;
 }());
 
-//# sourceMappingURL=user-cart.module.js.map
+//# sourceMappingURL=verify-number.module.js.map
 
 /***/ }),
 
-/***/ 304:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserCartPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyNumberPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_tabs__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,33 +57,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var UserCartPage = /** @class */ (function () {
-    function UserCartPage(navCtrl, navParams) {
+
+var VerifyNumberPage = /** @class */ (function () {
+    function VerifyNumberPage(navCtrl, navParams, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.toastCtrl = toastCtrl;
     }
-    UserCartPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad UserCartPage");
+    VerifyNumberPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad VerifyNumberPage");
     };
-    UserCartPage.prototype.checkout = function () {
-        this.navCtrl.push("CheckoutPage");
+    VerifyNumberPage.prototype.VerifyNumber = function () {
+        localStorage['user'] = "yes";
+        var message = this.toastCtrl.create({
+            message: "Verification Success",
+            position: "bottom",
+            duration: 1000
+        });
+        message.present();
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__tabs_tabs__["a" /* TabsPage */]);
+        console.log("verify number");
+        //write code to verify code
     };
-    UserCartPage.prototype.ionViewWillEnter = function () {
-        this.address = localStorage.getItem("deliveryAddress");
+    VerifyNumberPage.prototype.resendCode = function () {
+        this.otp = "";
+        var message = this.toastCtrl.create({
+            message: "OTP is Sent to your Register Mobile Number",
+            position: "bottom",
+            duration: 1000
+        });
+        message.present();
+        console.log("resend code");
+        //write code to resend OTP
     };
-    UserCartPage.prototype.changeAddress = function () {
-        this.navCtrl.push("NewAddressPage");
-    };
-    UserCartPage = __decorate([
+    VerifyNumberPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-user-cart",template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-cart/user-cart.html"*/'<ion-content>\n  <div class="header">\n    <ion-row class="header_section">\n      <ion-col col-2>\n        <ion-buttons left>\n          <button ion-button clear icon-only color="primary">\n            <ion-icon name="md-list"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col col-8>\n        <ion-item no-lines class="delivery_address" (click)="changeAddress()">\n          <ion-icon name="ios-pin-outline" item-start></ion-icon>\n          {{ address }}\n        </ion-item>\n      </ion-col>\n      <ion-col col-2>\n        <ion-buttons end>\n          <button ion-button clear icon-only color="primary">\n            <ion-icon name="md-time"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="allProduct">\n    <ion-row>\n      <ion-col> <ion-label class="basket_title">Basket</ion-label> </ion-col>\n      <ion-col>\n        <button (click)="checkout()" ion-button color="dark" float-right clear>\n          checkout\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-card>\n      <img src="assets/imgs/slider1.jpg" class="side_img" />\n      <ion-card-content class="product_sections">\n        <ion-card-title> Mexican Green Wave </ion-card-title>\n        <ion-row>\n          <ion-col col-6>\n            <ion-label class="product_price">$ 8.25</ion-label>\n          </ion-col>\n\n          <ion-col col-6>\n            <button ion-button icon-only float-right clear color="dark">\n              <ion-icon name="md-trash"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <button ion-button class="btn_count" color="light">-</button>\n            <button ion-button class="btn_count" color="light">2</button>\n            <button ion-button class="btn_count" color="light">+</button>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n      <img src="assets/imgs/slider1.jpg" class="side_img" />\n      <ion-card-content class="product_sections">\n        <ion-card-title> Mexican Green Wave </ion-card-title>\n        <ion-row>\n          <ion-col col-6>\n            <ion-label class="product_price">$ 8.25</ion-label>\n          </ion-col>\n\n          <ion-col col-6>\n            <button ion-button icon-only float-right clear color="dark">\n              <ion-icon name="md-trash"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <button ion-button class="btn_count" color="light">-</button>\n            <button ion-button class="btn_count" color="light">2</button>\n            <button ion-button class="btn_count" color="light">+</button>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/user-cart/user-cart.html"*/
+            selector: "page-verify-number",template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\verify-number\verify-number.html"*/'<ion-content padding>\n\n  <h3 class="page-title">Enter OTP</h3>\n\n  <div class="top-pera">\n\n    <p>\n\n      Enter 6 digit number to validate mobile number\n\n    </p>\n\n  </div>\n\n  <div class=\'masked\'>\n\n    <input type="text" maxlength="6" [(ngModel)]="otp">\n\n  </div>\n\n  <div class=\'masked2\'>\n\n  </div>\n\n  <div class="code-container">\n\n  </div>\n\n  <div class="button-container">\n\n    <button ion-button block color="primary" (tap)="VerifyNumber()" tappable>Verify</button>\n\n  </div>\n\n  <div class="footer-text-container">\n\n    <span class="footer-text" (tap)="resendCode()">Resend code</span>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\verify-number\verify-number.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], UserCartPage);
-    return UserCartPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
+    ], VerifyNumberPage);
+    return VerifyNumberPage;
 }());
 
-//# sourceMappingURL=user-cart.js.map
+//# sourceMappingURL=verify-number.js.map
 
 /***/ })
 

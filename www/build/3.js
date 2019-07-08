@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 275:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FiltersPageModule", function() { return FiltersPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic3_star_rating__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var FiltersPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,13 +98,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__ = __webpack_require__(298);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic3_star_rating_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* unused harmony namespace reexport */
 
 
@@ -112,13 +112,13 @@ var StarRating = (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarRatingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ionic3_star_rating_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
 
 
@@ -153,7 +153,7 @@ var StarRatingModule = (function () {
 
 /***/ }),
 
-/***/ 294:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -197,7 +197,7 @@ var FiltersPage = /** @class */ (function () {
     };
     FiltersPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-filters',template:/*ion-inline-start:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/filters/filters.html"*/'<!--\n  Generated template for the FiltersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Filters</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="primary">\n        <ion-icon name="md-time"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item>\n      <ion-label>All</ion-label>\n      <ion-checkbox checked="true"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Restaurant</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Cafe</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Market</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Snack & Drinks</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Bakeries</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header>\n      Diet\n    </ion-list-header>\n    <ion-item>\n      <ion-label>All</ion-label>\n      <ion-checkbox checked="true"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Dietary</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Vegetarian</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Kosher</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Eco</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Without gluten</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Sugarless</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Without lactose </ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header>\n      Payments\n    </ion-list-header>\n    <ion-item>\n      <ion-label>Cash</ion-label>\n      <ion-checkbox checked="true"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Online</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Card</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header>\n      Catalog\n    </ion-list-header>\n    <ion-item>\n      <ion-label>All</ion-label>\n      <ion-checkbox checked="true"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Grocery</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Preserving</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Beverages</ion-label>\n      <ion-checkbox></ion-checkbox>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-list-header>\n      Distance\n    </ion-list-header>\n    <ion-item>\n      <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" color="dark" max="30">\n      </ion-range>\n      <ion-label>Distance Range {{structure.lower}} m - {{structure.upper}} km </ion-label>\n    </ion-item>\n  </ion-list>\n  <button ion-button color="primary" full round (tap)="filter()">Filter</button>\n  <button ion-button color="primary" outline round class="clear_btn" (tap)="clear()">Clear</button>\n</ion-content>'/*ion-inline-end:"/Users/abhinav/Alibaba/App_Source_Code/food_update/src/pages/filters/filters.html"*/,
+            selector: 'page-filters',template:/*ion-inline-start:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\filters\filters.html"*/'<!--\n\n  Generated template for the FiltersPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Filters</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="primary">\n\n        <ion-icon name="md-time"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-label>All</ion-label>\n\n      <ion-checkbox checked="true"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Restaurant</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Cafe</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Market</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Snack & Drinks</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Bakeries</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n\n      Diet\n\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-label>All</ion-label>\n\n      <ion-checkbox checked="true"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Dietary</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Vegetarian</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Kosher</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Eco</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Without gluten</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Sugarless</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Without lactose </ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n\n      Payments\n\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-label>Cash</ion-label>\n\n      <ion-checkbox checked="true"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Online</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Card</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n\n      Catalog\n\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-label>All</ion-label>\n\n      <ion-checkbox checked="true"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Grocery</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Preserving</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Beverages</ion-label>\n\n      <ion-checkbox></ion-checkbox>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n\n      Distance\n\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" color="dark" max="30">\n\n      </ion-range>\n\n      <ion-label>Distance Range {{structure.lower}} m - {{structure.upper}} km </ion-label>\n\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary" full round (tap)="filter()">Filter</button>\n\n  <button ion-button color="primary" outline round class="clear_btn" (tap)="clear()">Clear</button>\n\n</ion-content>'/*ion-inline-end:"E:\Backup\Abhinav-data\github\ali\test1\src\pages\filters\filters.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], FiltersPage);
