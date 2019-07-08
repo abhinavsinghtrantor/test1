@@ -1,0 +1,95 @@
+page-user-home {
+    .scroll-content{
+        background-color: #f4f4f4;
+    }
+    .header_section{
+        margin-top: 20px;
+        .delivery_address{
+            border-radius: 25px;
+            color: #6739B7;
+            font-size: 1.2rem;
+          }
+    }
+    .main_section{
+        padding: 16px;
+        .explore_lbl{
+            margin-left: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .searchbar-md .searchbar-input{
+            border-radius: 20px;
+            font-family: appfont;
+        }
+    }
+    .restaurant{
+        .card-content-ios{
+            padding: 0px;
+        }
+        .card-content-md{
+            padding: 0px;
+        }
+        margin-top:110px; 
+        border-radius: 5px;
+        .restaurant_card{
+            margin-bottom: 100px;
+            border-radius: 10px;
+        }
+        .main_img{
+            width: 80%;            
+            position: absolute;
+            z-index: 2;
+            height: 25%;
+            margin-top: -80px;
+            margin-left: 2%;
+            margin-right: 2%;
+            border-radius: 10px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+        }
+        .card_content{
+            margin-top: 80px;
+        }
+        .restaurant_content{
+            padding: 10px;
+            ion-row{
+                margin: -10px;
+            }
+            .restaurant_name{
+                font-size: 1.6rem;
+                text-align: left;
+                padding: 5px;
+                font-weight: bold;
+            }
+            .restaurant_time{
+                font-size: 1.6rem;
+                color: #6739B7;
+                text-align: right;
+                padding: 5px;
+            }
+            .restaurant_address{
+                font-size: 1.4rem;
+                text-align: left;
+                padding: 5px;
+                color: gray;
+            }
+            .restaurant_time_opening{
+                font-size: 1.4rem;
+                text-align: right;
+                padding: 5px;
+                color: gray; 
+            }
+            .rating_sections{
+                .user_rating{
+                    font-size: 1rem;
+                    color: gray;
+                }
+                .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] ion-icon[_ngcontent-c0]{
+                    font-size: 16px;
+                }
+                .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0]{
+                    width: 10px;
+                }
+            }
+        }
+    }
+}

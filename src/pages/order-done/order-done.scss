@@ -1,0 +1,56 @@
+page-order-done {
+  .main-view {
+    background: transparent;
+  }
+  .page-title {
+    text-align: center;
+    color: #40405e;
+    font-family: MontBook;
+    font-size: 1.6rem;
+    padding-top: 7% !important;
+  }
+
+  .closeBtn {
+    font-family: MontSemiBold !important;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    background-color: #333;
+  }
+  .modal_content {
+    position: absolute;
+    top: calc(60% - (50% / 2));
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: auto !important;
+    padding: 10px;
+    z-index: 100;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+    background: #fff;
+    // background: -moz-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+    // background: -webkit-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+    // background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(51, 51, 51, 0.35);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+    border-bottom-right-radius: 6.9mm;
+    border-bottom-left-radius: 6.9mm;
+    border-top-left-radius: 6.9mm;
+    border-top-right-radius: 6.9mm;
+    .orderDone {
+      font-weight: bold;
+      font-family: appfont;
+    }
+  }
+}

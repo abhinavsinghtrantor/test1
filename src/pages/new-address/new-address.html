@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar> <ion-title> Choose Address </ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <google-places-autocomplete
+    class="pngdiv"
+    (callback)="detail($event[0])"
+    key="AIzaSyDETzUTMYQiO8um87W4LsSQrzThLcUmHJY"
+  ></google-places-autocomplete>
+
+  <div #map id="map"></div>
+</ion-content>

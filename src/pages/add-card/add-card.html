@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar> <ion-title>Add Card</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:#EEEEEE;" padding>
+  <ion-card class="d_card"> <img src="assets/imgs/debit.png" /> </ion-card>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-input
+        placeholder="Card Holder Name"
+        [(ngModel)]="name"
+        type="text"
+        value=""
+      ></ion-input>
+    </ion-item>
+
+    <ion-item class="input">
+      <ion-input
+        type="text"
+        [(ngModel)]="number"
+        placeholder="Card Number"
+        value=""
+      ></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-datetime
+              [(ngModel)]="date"
+              displayFormat="MM/YYYY"
+              min="2017"
+              max="2030"
+              placeholder="Exp. Date"
+              [(ngModel)]="myDate"
+            ></ion-datetime>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-input
+              [(ngModel)]="cvv"
+              type="text"
+              placeholder="CVV"
+              value=""
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            color="custom"
+            full
+            class="btn_addcarte"
+            (click)="addCard()"
+          >
+            Add Card
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

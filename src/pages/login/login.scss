@@ -1,0 +1,26 @@
+page-login {
+    .login_content{
+        margin-top: 20px;
+        .item ion-thumbnail {
+            min-width: 50px;    
+            min-height: 50px;
+            img {
+                max-width: 50px;    
+                min-width: 50px;
+                max-height: 50px;
+            }
+        }
+        .login_title{
+            font-size: 2rem;
+        }
+        .item{
+            padding-left: 0px;
+        }
+        .mobile_section{
+            margin-top: 30px;
+        }
+        .ok_btn{
+            margin-top: 300px
+        }
+    }
+}

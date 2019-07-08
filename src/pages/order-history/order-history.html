@@ -1,0 +1,184 @@
+<ion-content>
+  <div class="header">
+    <ion-row class="header_section">
+      <ion-col col-2>
+        <ion-buttons left>
+          <button ion-button clear icon-only color="primary">
+            <ion-icon name="md-list"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-8>
+        <ion-item no-lines class="title"> Orders </ion-item>
+      </ion-col>
+      <ion-col col-2> </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="main_content">
+    <div padding>
+      <ion-segment [(ngModel)]="orders" mode="md">
+        <ion-segment-button value="current"> Current </ion-segment-button>
+        <ion-segment-button value="past"> Past </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="orders">
+      <ion-list *ngSwitchCase="'current'">
+        <ion-card class="c_orders">
+          <ion-card-content>
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/slider1.jpg" />
+              </ion-thumbnail>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="order_time">25 Aug 9.45</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right class="order_price">$4.5</p>
+                </ion-col>
+              </ion-row>
+              <h2 class="rest_name">Henry at Life Hotel</h2>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="assigned" text-wrap>• Order Assigned</p>
+                </ion-col>
+                <ion-col col-6 (click)="goDetails('yes')">
+                  <p text-right class="details">Detail</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="c_orders">
+          <ion-card-content>
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/slider1.jpg" />
+              </ion-thumbnail>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="order_time">25 Aug 10.45</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right class="order_price">$6.5</p>
+                </ion-col>
+              </ion-row>
+              <h2 class="rest_name">Trattoria Bianca</h2>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="waiting" text-wrap>• Waiting for Processing</p>
+                </ion-col>
+                <ion-col col-6 (click)="goDetails('no')">
+                  <p text-right class="details">Detail</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="c_orders">
+          <ion-card-content>
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/slider1.jpg" />
+              </ion-thumbnail>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="order_time">25 Aug 8.45</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right class="order_price">$6.5</p>
+                </ion-col>
+              </ion-row>
+              <h2 class="rest_name">Delmonico Steak</h2>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="picked" text-wrap>• Product Picked</p>
+                </ion-col>
+                <ion-col col-6 (click)="goDetails('yes')">
+                  <p text-right class="details">Detail</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'past'">
+        <ion-card class="p_orders">
+          <ion-card-content>
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/slider1.jpg" />
+              </ion-thumbnail>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="order_time">22 Aug 8.45</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right class="order_price">$6.5</p>
+                </ion-col>
+              </ion-row>
+              <h2 class="rest_name">Delmonico Steak</h2>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="deliverd" text-wrap>• Order Delivered</p>
+                </ion-col>
+                <ion-col col-6> </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-card-content>
+          <hr />
+          <ion-row>
+            <ion-col col-6>
+              <div class="rating_sections" text-center>
+                <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#eaea80"
+                  defaultColor="#f4f4f4" readonly="true" [rating]="5">
+                </ionic3-star-rating>
+              </div>
+            </ion-col>
+            <ion-col col-6 (click)="goDetails('yes')">
+              <p text-center class="details">Detail</p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-card class="p_orders">
+          <ion-card-content>
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/slider1.jpg" />
+              </ion-thumbnail>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="order_time">22 Aug 8.45</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right class="order_price">$6.5</p>
+                </ion-col>
+              </ion-row>
+              <h2 class="rest_name">Delmonico Steak</h2>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="Cancelled" text-wrap>• Order Cancelled</p>
+                </ion-col>
+                <ion-col col-6> </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-card-content>
+          <hr />
+          <ion-row>
+            <ion-col col-6>
+              <p class="repeat" text-center>• Repeat Order</p>
+            </ion-col>
+            <ion-col col-6>
+              <p text-center class="details" (click)="goDetails('no')">
+                Detail
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

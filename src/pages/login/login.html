@@ -1,0 +1,29 @@
+<ion-content padding>
+  <div class="login_content">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-thumbnail>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+      <h2 class="login_title">Please enter your mobile <br>number to proceed</h2>
+    </ion-list>
+    <ion-row class="mobile_section">
+      <ion-col col-4>
+        <ion-item>
+            <ion-input type="tel" placeholder="+1" maxlength="3" value="+1"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-8>
+          <ion-item>
+              <ion-input type="tel" placeholder="10 digit phone number" maxlength="10"></ion-input>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-list no-lines class="ok_btn">
+    <button ion-button block color="primary" (tap)="goVerifyPage()" tappable>CONTINUE</button>
+    </ion-list>
+  </div>
+</ion-content>

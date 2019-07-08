@@ -1,0 +1,121 @@
+page-order-details {
+  .header {
+    .header_section {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      margin-top: 20px;
+      .title {
+        border-radius: 25px;
+        color: black;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .main_content {
+    padding: 2%;
+    margin-top: 100px;
+    .delivered {
+      font-family: appfont;
+      color: #34a853;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .order_time {
+      font-family: appfont;
+      color: gray;
+      font-size: 1rem;
+    }
+    .d_orders {
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      .rateTitle {
+        font-size: 1.4rem;
+        color: gray;
+      }
+      .rateBtn {
+        font-size: 1.4rem;
+        color: blue;
+        font-weight: bold;
+      }
+      .rating_sections {
+        .user_rating {
+          font-size: 2rem;
+          color: gray;
+        }
+        .ionic3-star-rating[_ngcontent-c0]
+          .button[_ngcontent-c0]
+          ion-icon[_ngcontent-c0] {
+          font-size: 32px;
+        }
+        .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
+          width: 30px;
+        }
+      }
+    }
+    .card_div {
+      margin-top: 10px;
+    }
+    .card_lbl1 {
+      font-size: 1.5rem;
+      color: black;
+      font-weight: bold;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .card_lbl2 {
+      font-size: 1.5rem;
+      color: gray;
+      padding-right: 20px;
+      text-align: right;
+    }
+    .lbl_card {
+      font-size: 1rem;
+      text-align: left;
+      height: 60px !important;
+    }
+    .img_slider {
+      padding: 5px;
+      height: 60px !important;
+      width: 60px !important;
+    }
+    .img_col {
+      border-radius: 5px !important;
+    }
+    .pay_card_active {
+      color: #f4f4f4;
+      height: 70px;
+      background-image: linear-gradient(to right, #6739b7, #9b85c1);
+    }
+    .pay_card {
+      color: black;
+      height: 70px;
+      background-color: white;
+    }
+    .comman {
+      font-size: 1.3rem;
+    }
+    .charge_price {
+      font-size: 1.3rem;
+    }
+    .total_amont {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .total_price {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .pay_btn {
+      width: 85%;
+      margin: auto;
+    }
+    .cod_btn {
+      width: 85%;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

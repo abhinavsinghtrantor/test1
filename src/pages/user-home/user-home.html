@@ -1,0 +1,80 @@
+<ion-content>
+  <ion-row class="header_section">
+    <ion-col col-2>
+      <ion-buttons left>
+        <button ion-button clear icon-only color="primary">
+          <ion-icon name="md-list"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col col-8>
+      <ion-item no-lines class="delivery_address" (click)="changeAddress()">
+        <ion-icon name="ios-pin-outline" item-start></ion-icon>
+        {{ address }}
+      </ion-item>
+    </ion-col>
+    <ion-col col-2>
+      <ion-buttons end>
+        <button ion-button clear icon-only color="primary">
+          <ion-icon name="md-time"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+  <div class="main_section">
+    <ion-label class="explore_lbl">Explore</ion-label>
+    <ion-searchbar mode="md"></ion-searchbar>
+    <div class="restaurant">
+      <ion-card
+        class="restaurant_card"
+        *ngFor="let restaurant of restaurants; let i = index"
+        (tap)="goProductList(restaurant)"
+        tappable
+      >
+        <img src="{{ restaurant.image }}" class="main_img" />
+        <ion-card-content> <div class="card_content"></div> </ion-card-content>
+        <div class="restaurant_content">
+          <ion-row>
+            <ion-col col-6>
+              <h2 class="restaurant_name">{{ restaurant.name }}</h2>
+            </ion-col>
+            <ion-col col-6>
+              <h2 class="restaurant_time">{{ restaurant.time }} min</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h2 class="restaurant_address">{{ restaurant.address }}</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <div class="rating_sections">
+                <ionic3-star-rating
+                  activeIcon="ios-star"
+                  defaultIcon="ios-star-outline"
+                  activeColor="#eaea80"
+                  defaultColor="#f4f4f4"
+                  readonly="true"
+                  [rating]="5"
+                >
+                </ionic3-star-rating>
+                <h2 class="user_rating">{{ restaurant.rating }}</h2>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+              <h2 class="restaurant_time_opening">
+                {{ restaurant.openign_time }}
+              </h2>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+  <ion-fab right bottom (tap)="filter()">
+    <button ion-fab color="primary" mini>
+      <ion-icon name="md-funnel"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

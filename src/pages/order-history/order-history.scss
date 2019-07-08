@@ -1,0 +1,125 @@
+page-order-history {
+  .header {
+    .header_section {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      margin-top: 20px;
+      .title {
+        border-radius: 25px;
+        color: #6739b7;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .main_content {
+    padding: 2%;
+    margin-top: 100px;
+    .c_orders {
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      .details {
+        color: blue;
+        font-family: appfont;
+      }
+      .order_time {
+        font-family: appfont;
+        color: gray;
+        font-size: 1rem;
+      }
+      .order_price {
+        font-family: appfont;
+        color: gray;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .rest_name {
+        font-family: appfont;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .assigned {
+        font-family: appfont;
+        color: #4285f4;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .waiting {
+        font-family: appfont;
+        color: #ea4335;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .picked {
+        font-family: appfont;
+        color: blue;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+    .p_orders {
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      .details {
+        color: blue;
+        font-family: appfont;
+      }
+      .repeat {
+        font-family: appfont;
+        color: gray;
+        font-size: 1.2rem;
+      }
+      .order_time {
+        font-family: appfont;
+        color: gray;
+        font-size: 1rem;
+      }
+      .order_price {
+        font-family: appfont;
+        color: gray;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .rest_name {
+        font-family: appfont;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .deliverd {
+        font-family: appfont;
+        color: #34a853;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .rating_sections {
+        .user_rating {
+          font-size: 1rem;
+          color: gray;
+        }
+        .ionic3-star-rating[_ngcontent-c0]
+          .button[_ngcontent-c0]
+          ion-icon[_ngcontent-c0] {
+          font-size: 16px;
+        }
+        .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
+          width: 10px;
+        }
+      }
+      .Cancelled {
+        font-family: appfont;
+        color: #ea4335;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .picked {
+        font-family: appfont;
+        color: blue;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+page-add-card {
+  .label_cart {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 25px !important;
+    margin-bottom: 15px !important;
+  }
+  .d_card {
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+  .input {
+    margin-top: 5px;
+  }
+  .grid {
+    padding: 0px;
+  }
+  .text-input-ios {
+    margin: 9px 8px 11px 0px;
+  }
+  .col {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .btn_addcarte {
+    border-radius: 5px;
+    height: 40px;
+  }
+  .btn-header {
+    background: transparent;
+  }
+}

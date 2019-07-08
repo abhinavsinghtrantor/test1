@@ -1,0 +1,120 @@
+page-checkout {
+  .scroll-content {
+    background-color: #f4f4f4;
+  }
+  .header_section {
+    margin-top: 20px;
+    .delivery_address {
+      border-radius: 25px;
+      color: #6739b7;
+      font-size: 1.2rem;
+    }
+  }
+  .allProduct {
+    .checkout_lbl {
+      margin-left: 10px;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    padding: 2%;
+    margin-top: 10px;
+    .side_img {
+      width: 40%;
+      position: absolute;
+      z-index: 2;
+      height: 23%;
+      margin-top: 10px;
+      margin-left: -5px;
+      border-radius: 5px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+    }
+    .product_sections {
+      margin-left: 41%;
+    }
+    .product_price {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #6739b7;
+    }
+    .product_quantity {
+      font-weight: bold;
+      font-size: 1rem;
+      color: gray;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .btn_count {
+      margin-top: 16px;
+      height: 30px;
+      border: 1px solid;
+      width: 30px;
+    }
+  }
+  .card_div {
+    margin-top: 10px;
+  }
+  .card_lbl1 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: left;
+  }
+  .card_lbl2 {
+    font-size: 1.5rem;
+    color: gray;
+    padding-right: 20px;
+    text-align: right;
+  }
+  .lbl_card {
+    font-size: 1rem;
+    text-align: left;
+    height: 60px !important;
+  }
+  .img_slider {
+    padding: 5px;
+    height: 60px !important;
+    width: 60px !important;
+  }
+  .img_col {
+    border-radius: 5px !important;
+  }
+  .pay_card_active {
+    color: #f4f4f4;
+    height: 70px;
+    background-image: linear-gradient(to right, #6739b7, #9b85c1);
+  }
+  .pay_card {
+    color: black;
+    height: 70px;
+    background-color: white;
+  }
+  .comman {
+    font-size: 1.3rem;
+  }
+  .charge_price {
+    font-size: 1.3rem;
+  }
+  .total_amont {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .total_price {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .pay_btn {
+    width: 85%;
+    margin: auto;
+  }
+  .cod_btn {
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,21 @@
+<ion-content padding>
+  <h3 class="page-title">Enter OTP</h3>
+  <div class="top-pera">
+    <p>
+      Enter 6 digit number to validate mobile number
+    </p>
+  </div>
+  <div class='masked'>
+    <input type="text" maxlength="6" [(ngModel)]="otp">
+  </div>
+  <div class='masked2'>
+  </div>
+  <div class="code-container">
+  </div>
+  <div class="button-container">
+    <button ion-button block color="primary" (tap)="VerifyNumber()" tappable>Verify</button>
+  </div>
+  <div class="footer-text-container">
+    <span class="footer-text" (tap)="resendCode()">Resend code</span>
+  </div>
+</ion-content>

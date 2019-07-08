@@ -1,0 +1,53 @@
+.tutorial-page {
+    .toolbar-background {
+        background: #fff;
+        border-color: transparent;
+      }
+    .slide-zoom {
+      height: 100%;
+    }
+    .slide-title {
+      margin-top: 2.8rem;
+      font-size: 2rem;
+    }
+    .slide-desc{
+      font-size: 1.4rem;
+    }
+    .slide-image {
+        max-height: 40%;
+        max-width: 85%;
+        margin: 18px 0;
+        height: 300px;
+        width: 85%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    }
+    b {
+      font-weight: 500;
+    }
+    p {
+      padding: 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #60646B;
+      b {
+        color: #000000;
+      }
+    }
+    .start_btn{
+        width: 80%;
+        margin: auto;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        margin-top: 45px;
+        font-family: appfont;
+        -webkit-box-shadow: 0px 11px 6px -6px rgba(60, 76, 121, 0.4);
+        -moz-box-shadow: 0px 11px 6px -6px rgba(60, 76, 121, 0.4);
+        box-shadow: 0px 11px 6px -6px rgba(60, 76, 121, 0.4);
+    }
+    .swiper-pagination-bullet-active {
+        background: #6739B7;
+        opacity: 1;
+    }
+  }
